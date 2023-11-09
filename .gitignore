@@ -1,5 +1,9 @@
 # Data files
 data/*
+figures
+
+# External libraries
+freshwater
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
