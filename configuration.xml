@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scenario version="getm-2.5">
+	<getm>
+		<param>
+			<runid>fjord_79NG</runid>
+			<title>Semi-Realistic Model of the 79NG Fjord</title>
+			<parallel>True</parallel>
+		</param>
+		<time>
+			<timestep>5.0</timestep>
+			<start>2000-01-01 00:00:00</start>
+			<stop>2000-01-02 00:00:00</stop>
+		</time>
+		<domain>
+			<vert_cord>6</vert_cord>
+			<bathymetry>topography_1km.nc</bathymetry>
+			<rigid_lid>False</rigid_lid>
+			<longitude>-20.0</longitude>
+			<latitude>79.5</latitude>
+			<f_plane>False</f_plane>
+			<openbdy>False</openbdy> <!-- TBC -->
+			<bdyinfofile>bdyinfo.dat</bdyinfofile>
+			<kdum>30</kdum> <!-- TBC -->
+			<ddu>0.0</ddu>
+			<ddl>0.0</ddl>
+			<il>1</il>
+			<ih>165</ih>
+			<jl>1</jl>
+			<jh>141</jh>
+			<z0_const>0.0015</z0_const>
+			<z0s_const>0.001</z0s_const>
+			<check_cfl>True</check_cfl>
+		</domain>
+		<parameters>
+			<g>9.81</g>
+			<rho_0>1025.0</rho_0>
+			<cp>3985.0</cp>
+			<kappa>0.4</kappa>
+			<avmmol>1.8e-06</avmmol>
+		</parameters>
+		<meteo>
+			<fwf_method>1</fwf_method>
+		</meteo>
+		<ice>
+			<have_glacial_ice>False</have_glacial_ice> <!-- TBC -->
+			<ice_file>topography_1km.nc</ice_file>
+			<rho_ice>920.0</rho_ice>
+			<z0_ice>0.01</z0_ice>
+		</ice>
+		<rivers>
+			<river_method>0</river_method> <!-- TBC -->
+			<river_info>grounding_line_1km.txt</river_info>
+			<river_data>subglacial_runoff.nc</river_data>
+			<use_river_salt>False</use_river_salt>
+			<use_river_temp>True</use_river_temp>
+			<river_outflow_properties_follow_source_cell>False</river_outflow_properties_follow_source_cell>
+		</rivers>
+		<m2d>
+			<elev_method>1</elev_method>
+			<elev_file>initial_surface_elevation.nc</elev_file>
+			<vel2d_adv_split>2</vel2d_adv_split>
+			<vel2d_adv_hor>4</vel2d_adv_hor>
+			<An_method>1</An_method>
+			<An_const>200.0</An_const> <!-- TBC -->
+			<sealevel_check>10</sealevel_check>
+			<depth_check>10</depth_check>
+			<bdy2d>True</bdy2d>
+			<bdyfile_2d>boundary_2d.nc</bdyfile_2d>
+			<bdy2d_sponge_size>0</bdy2d_sponge_size>
+		</m2d>
+		<m3d>
+			<M>4</M>
+			<adv_ver_iterations>1000</adv_ver_iterations>
+			<bdy3d>True</bdy3d>
+			<bdyfile_3d>boundary_3d.nc</bdyfile_3d>
+			<bdy3d_sponge_size>3</bdy3d_sponge_size>
+			<vel3d_adv_split>2</vel3d_adv_split>
+			<vel3d_adv_hor>4</vel3d_adv_hor>
+			<vel3d_adv_ver>4</vel3d_adv_ver>
+			<calc_temp>True</calc_temp>
+			<calc_salt>True</calc_salt>
+			<turb_adv_split>2</turb_adv_split>
+			<turb_adv_hor>4</turb_adv_hor>
+			<turb_adv_ver>4</turb_adv_ver>
+			<ip_method>6</ip_method>
+		</m3d>
+		<temp>
+			<temp_method>2</temp_method> <!-- TBC -->
+			<temp_file>temp_profile.txt</temp_file>
+			<temp_adv_split>2</temp_adv_split>
+			<temp_adv_hor>4</temp_adv_hor>
+			<temp_adv_ver>4</temp_adv_ver>
+			<avmolt>1.4e-07</avmolt>
+		</temp>
+		<salt>
+			<salt_method>2</salt_method> <!-- TBC -->
+			<salt_file>salt_profile.txt</salt_file>
+			<salt_adv_split>2</salt_adv_split>
+			<salt_adv_hor>4</salt_adv_hor>
+			<salt_adv_ver>4</salt_adv_ver>
+			<avmols>1.1e-09</avmols>
+		</salt>
+		<io_spec>
+			<out_dir>./store</out_dir>
+			<save_2d>False</save_2d>
+			<first_2d>100000000</first_2d>
+			<step_2d>100000000</step_2d>
+			<first_3d>100000000</first_3d>
+			<step_3d>100000000</step_3d>
+			<hotout>
+				<e>-1</e> <!-- TBC? -->
+				<e/>
+				<e/>
+			</hotout>
+		</io_spec>
+	</getm>
+	<adaptcoord6>
+		<adapt_coord>
+			<csig>0.05</csig>
+			<cgvc>0.0</cgvc>
+			<cNN>0.95</cNN>
+			<cSS>0.0</cSS>
+			<chsurf>1.0</chsurf> <!-- default: 0.5 -->
+			<chbott>0.2</chbott> <!-- default: 0.3 -->
+			<chmidd>0.2</chmidd>
+			<cneigh>0.1</cneigh>
+			<hsurf>0.5</hsurf>
+			<hbott>-1.0</hbott> <!-- default: -0.25 -->
+			<hmidd>-4.0</hmidd>
+			<hwallmult>0.8</hwallmult>
+			<rneigh>0.25</rneigh>
+			<hpow>3</hpow>
+			<d_dens>0.3</d_dens>
+			<d_vel>0.1</d_vel>
+			<nfiltvert>2</nfiltvert>
+			<wfiltvert>0.1</wfiltvert> <!-- default 0.3 -->
+			<wfilthorz>0.2</wfilthorz> <!-- default 0.4 -->
+			<hmin>0.1</hmin>
+			<tgrid>14400.0</tgrid>
+			<split>1</split>
+		</adapt_coord>
+	</adaptcoord6>
+	<fjord>
+		<ice_tongue>
+			<calving_front_slope>0.01</calving_front_slope> <!-- not yet used -->
+		</ice_tongue>
+		<stratification>
+			<level z="0"    S="29" T="-1.5" />
+			<level z="-100" S="34" T="-1.0" />
+			<level z="-300" S="35" T="1.5" />
+			<level z="-900" S="35" T="1.5" />
+		</stratification>
+	</fjord>
+</scenario>
