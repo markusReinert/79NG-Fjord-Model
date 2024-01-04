@@ -9,7 +9,7 @@
 		<time>
 			<timestep>5.0</timestep>
 			<start>2000-01-01 00:00:00</start>
-			<stop>2000-01-02 00:00:00</stop>
+			<stop>2000-02-01 00:00:00</stop>
 		</time>
 		<domain>
 			<vert_cord>6</vert_cord>
@@ -42,21 +42,21 @@
 			<fwf_method>1</fwf_method>
 		</meteo>
 		<ice>
-			<have_glacial_ice>False</have_glacial_ice> <!-- TBC -->
+			<have_glacial_ice>True</have_glacial_ice>
 			<ice_file>topography_1km.nc</ice_file>
 			<rho_ice>920.0</rho_ice>
 			<z0_ice>0.01</z0_ice>
 		</ice>
 		<rivers>
-			<river_method>0</river_method> <!-- TBC -->
+			<river_method>2</river_method>
 			<river_info>grounding_line_1km.txt</river_info>
 			<river_data>subglacial_runoff.nc</river_data>
 			<use_river_salt>False</use_river_salt>
-			<use_river_temp>True</use_river_temp>
+			<use_river_temp>False</use_river_temp> <!-- TBC -->
 			<river_outflow_properties_follow_source_cell>False</river_outflow_properties_follow_source_cell>
 		</rivers>
 		<m2d>
-			<elev_method>1</elev_method>
+			<elev_method>1</elev_method> <!-- TBC? -->
 			<elev_file>initial_surface_elevation.nc</elev_file>
 			<vel2d_adv_split>2</vel2d_adv_split>
 			<vel2d_adv_hor>4</vel2d_adv_hor>

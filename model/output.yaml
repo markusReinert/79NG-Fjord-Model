@@ -32,6 +32,8 @@ store/out_snapshot:
   - source: w
   - source: SS
   - source: NN
+  - source: glacial_ice/*
+    output_level: 32
 
 
 store/out_mean:
@@ -63,6 +65,8 @@ store/out_mean:
   - source: w
   - source: SS
   - source: NN
+  - source: glacial_ice/*
+    output_level: 32
 
 
 # Explanation and template of the file format:
