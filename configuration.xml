@@ -18,7 +18,7 @@
 			<longitude>-20.0</longitude>
 			<latitude>79.5</latitude>
 			<f_plane>False</f_plane>
-			<openbdy>False</openbdy> <!-- TBC -->
+			<openbdy>True</openbdy>
 			<bdyinfofile>bdyinfo.dat</bdyinfofile>
 			<kdum>30</kdum> <!-- TBC -->
 			<ddu>0.0</ddu>
@@ -65,14 +65,14 @@
 			<sealevel_check>10</sealevel_check>
 			<depth_check>10</depth_check>
 			<bdy2d>True</bdy2d>
-			<bdyfile_2d>boundary_2d.nc</bdyfile_2d>
+			<bdyfile_2d>bdy_2d.nc</bdyfile_2d>
 			<bdy2d_sponge_size>0</bdy2d_sponge_size>
 		</m2d>
 		<m3d>
 			<M>4</M>
 			<adv_ver_iterations>1000</adv_ver_iterations>
-			<bdy3d>True</bdy3d>
-			<bdyfile_3d>boundary_3d.nc</bdyfile_3d>
+			<bdy3d>False</bdy3d> <!-- TBC -->
+			<bdyfile_3d>bdy_3d.nc</bdyfile_3d>
 			<bdy3d_sponge_size>3</bdy3d_sponge_size>
 			<vel3d_adv_split>2</vel3d_adv_split>
 			<vel3d_adv_hor>4</vel3d_adv_hor>
