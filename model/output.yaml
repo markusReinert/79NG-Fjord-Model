@@ -2,7 +2,6 @@
 #
 # Explanations at the end of the file.
 
-
 store/out_snapshot:
   time_method: 1  # treatment of time dimension: instantaneous
   time_unit: day
@@ -35,7 +34,6 @@ store/out_snapshot:
   - source: glacial_ice/*
     output_level: 32
 
-
 store/out_mean:
   time_method: 2  # treatment of time dimension: mean
   time_unit: day
@@ -67,7 +65,6 @@ store/out_mean:
   - source: NN
   - source: glacial_ice/*
     output_level: 32
-
 
 # Explanation and template of the file format:
 #

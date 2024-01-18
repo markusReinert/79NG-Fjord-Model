@@ -60,6 +60,7 @@
 			<elev_file>initial_surface_elevation.nc</elev_file>
 			<vel2d_adv_split>2</vel2d_adv_split>
 			<vel2d_adv_hor>4</vel2d_adv_hor>
+			<Am_method>2</Am_method>
 			<An_method>1</An_method>
 			<An_const>200.0</An_const> <!-- TBC -->
 			<sealevel_check>10</sealevel_check>
@@ -69,7 +70,7 @@
 			<bdy2d_sponge_size>0</bdy2d_sponge_size>
 		</m2d>
 		<m3d>
-			<M>4</M>
+			<M>12</M>
 			<adv_ver_iterations>1000</adv_ver_iterations>
 			<bdy3d>False</bdy3d> <!-- TBC -->
 			<bdyfile_3d>bdy_3d.nc</bdyfile_3d>
@@ -101,7 +102,7 @@
 			<avmols>1.1e-09</avmols>
 		</salt>
 		<io_spec>
-			<out_dir>./store</out_dir>
+			<out_dir>store</out_dir>
 			<save_2d>False</save_2d>
 			<first_2d>100000000</first_2d>
 			<step_2d>100000000</step_2d>
