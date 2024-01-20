@@ -59,8 +59,6 @@
 			<vel2d_adv_split>2</vel2d_adv_split>
 			<vel2d_adv_hor>4</vel2d_adv_hor>
 			<Am_method>2</Am_method>
-			<An_method>1</An_method>
-			<An_const>200.0</An_const> <!-- TBC -->
 			<sealevel_check>10</sealevel_check>
 			<depth_check>10</depth_check>
 			<bdy2d>True</bdy2d>
@@ -84,7 +82,7 @@
 			<ip_method>6</ip_method>
 		</m3d>
 		<temp>
-			<temp_method>2</temp_method> <!-- TBC -->
+			<temp_method>2</temp_method>
 			<temp_file>temp_profile.txt</temp_file>
 			<temp_adv_split>2</temp_adv_split>
 			<temp_adv_hor>4</temp_adv_hor>
@@ -92,7 +90,7 @@
 			<avmolt>1.4e-07</avmolt>
 		</temp>
 		<salt>
-			<salt_method>2</salt_method> <!-- TBC -->
+			<salt_method>2</salt_method>
 			<salt_file>salt_profile.txt</salt_file>
 			<salt_adv_split>2</salt_adv_split>
 			<salt_adv_hor>4</salt_adv_hor>
@@ -107,7 +105,7 @@
 			<first_3d>100000000</first_3d>
 			<step_3d>100000000</step_3d>
 			<hotout>
-				<e>-1</e> <!-- TBC? -->
+				<e>-1</e>
 				<e/>
 				<e/>
 			</hotout>
@@ -140,9 +138,6 @@
 		</adapt_coord>
 	</adaptcoord6>
 	<fjord>
-		<ice_tongue>
-			<calving_front_slope>0.01</calving_front_slope> <!-- not yet used -->
-		</ice_tongue>
 		<stratification>
 			<level z="0"    S="29" T="-1.5" />
 			<level z="-100" S="34" T="-1.0" />
