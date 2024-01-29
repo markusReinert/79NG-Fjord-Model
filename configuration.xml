@@ -13,7 +13,7 @@
 		</time>
 		<domain>
 			<vert_cord>6</vert_cord>
-			<bathymetry>topography_1km.nc</bathymetry>
+			<bathymetry>topography_500m.nc</bathymetry>
 			<rigid_lid>False</rigid_lid>
 			<longitude>-20.0</longitude>
 			<latitude>79.5</latitude>
@@ -24,9 +24,9 @@
 			<ddu>0.0</ddu>
 			<ddl>0.0</ddl>
 			<il>1</il>
-			<ih>165</ih>
+			<ih>325</ih>
 			<jl>1</jl>
-			<jh>141</jh>
+			<jh>273</jh>
 			<z0_const>0.0015</z0_const>
 			<z0s_const>0.001</z0s_const>
 			<check_cfl>True</check_cfl>
@@ -43,13 +43,13 @@
 		</meteo>
 		<ice>
 			<have_glacial_ice>True</have_glacial_ice>
-			<ice_file>topography_1km.nc</ice_file>
+			<ice_file>topography_500m.nc</ice_file>
 			<rho_ice>920.0</rho_ice>
 			<z0_ice>0.01</z0_ice>
 		</ice>
 		<rivers>
 			<river_method>2</river_method>
-			<river_info>grounding_line_1km.txt</river_info>
+			<river_info>grounding_line_500m.txt</river_info>
 			<river_data>subglacial_runoff.nc</river_data>
 			<use_river_salt>False</use_river_salt>
 			<use_river_temp>False</use_river_temp> <!-- TBC -->
