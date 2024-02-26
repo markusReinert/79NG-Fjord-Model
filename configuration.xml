@@ -66,7 +66,7 @@
 			<bdy2d_sponge_size>0</bdy2d_sponge_size>
 		</m2d>
 		<m3d>
-			<M>12</M>
+			<M>24</M>
 			<adv_ver_iterations>1000</adv_ver_iterations>
 			<bdy3d>True</bdy3d>
 			<bdyfile_3d>bdy_3d.nc</bdyfile_3d>
@@ -105,7 +105,7 @@
 			<first_3d>100000000</first_3d>
 			<step_3d>100000000</step_3d>
 			<hotout>
-				<e>-1</e>
+				<e>0</e>
 				<e/>
 				<e/>
 			</hotout>
