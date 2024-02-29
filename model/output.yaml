@@ -2,14 +2,47 @@
 #
 # Explanations at the end of the file.
 
+store/out_hourly_2d:
+  time_method: 1  # treatment of time dimension: instantaneous
+  time_unit: hour
+  time_step: 1
+  variables:
+  - source: domain/*
+    output_level: 32
+  - source: metrics/*
+    output_level: 32
+  - source: glIceD
+  - source: z
+    name: eta
+  - source: D
+  - source: DU
+  - source: DV
+  - source: U
+  - source: V
+  - source: velx
+    name: u2d
+  - source: vely
+    name: v2d
+  - source: vm
+
 store/out_snapshot:
   time_method: 1  # treatment of time dimension: instantaneous
   time_unit: day
   time_step: 1
   variables:
-  - source: bathymetry
+  - source: domain/*
+    output_level: 32
+  - source: metrics/*
+    output_level: 32
+  - source: turbulence/*
+    output_level: 32
+  - source: glacial_ice/*
+    output_level: 32
   - source: z
     name: eta
+  - source: D
+  - source: DU
+  - source: DV
   - source: zc
   - source: hn
     name: h
@@ -20,28 +53,43 @@ store/out_snapshot:
   - source: rho
   - source: salt
   - source: temp
+  - source: SS
+  - source: NN
+  - source: U
+  - source: V
+  - source: uu
+  - source: vv
   - source: velx
     name: u2d
-  - source: velx3d
-    name: u
   - source: vely
     name: v2d
+  - source: velx3d
+    name: u
   - source: vely3d
     name: v
   - source: w
-  - source: SS
-  - source: NN
-  - source: glacial_ice/*
-    output_level: 32
+  - source: Tfluxu
+  - source: Tfluxv
+  - source: Tfluxw
 
 store/out_mean:
   time_method: 2  # treatment of time dimension: mean
   time_unit: day
   time_step: 1
   variables:
-  - source: bathymetry
+  - source: domain/*
+    output_level: 32
+  - source: metrics/*
+    output_level: 32
+  - source: turbulence/*
+    output_level: 32
+  - source: glacial_ice/*
+    output_level: 32
   - source: z
     name: eta
+  - source: D
+  - source: DU
+  - source: DV
   - source: zc
   - source: hn
     name: h
@@ -52,19 +100,24 @@ store/out_mean:
   - source: rho
   - source: salt
   - source: temp
+  - source: SS
+  - source: NN
+  - source: U
+  - source: V
+  - source: uu
+  - source: vv
   - source: velx
     name: u2d
-  - source: velx3d
-    name: u
   - source: vely
     name: v2d
+  - source: velx3d
+    name: u
   - source: vely3d
     name: v
   - source: w
-  - source: SS
-  - source: NN
-  - source: glacial_ice/*
-    output_level: 32
+  - source: Tfluxu
+  - source: Tfluxv
+  - source: Tfluxw
 
 # Explanation and template of the file format:
 #
