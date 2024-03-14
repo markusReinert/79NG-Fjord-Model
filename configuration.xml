@@ -7,7 +7,7 @@
 			<parallel>True</parallel>
 		</param>
 		<time>
-			<timestep>2.5</timestep>
+			<timestep>2.0</timestep>
 			<start>2000-01-01 00:00:00</start>
 			<stop>2001-01-01 00:00:00</stop>
 		</time>
@@ -66,7 +66,7 @@
 			<bdy2d_sponge_size>0</bdy2d_sponge_size>
 		</m2d>
 		<m3d>
-			<M>24</M>
+			<M>15</M>
 			<adv_ver_iterations>1000</adv_ver_iterations>
 			<bdy3d>True</bdy3d>
 			<bdyfile_3d>bdy_3d.nc</bdyfile_3d>
@@ -105,9 +105,9 @@
 			<first_3d>100000000</first_3d>
 			<step_3d>100000000</step_3d>
 			<hotout>
-				<e>0</e>
+				<e>43200</e>
 				<e/>
-				<e/>
+				<e>43200</e>
 			</hotout>
 		</io_spec>
 	</getm>
@@ -117,12 +117,12 @@
 			<cgvc>0.0</cgvc>
 			<cNN>0.95</cNN>
 			<cSS>0.0</cSS>
-			<chsurf>1.0</chsurf> <!-- default: 0.5 -->
-			<chbott>0.2</chbott> <!-- default: 0.3 -->
+			<chsurf>0.5</chsurf>
+			<chbott>0.3</chbott>
 			<chmidd>0.2</chmidd>
 			<cneigh>0.1</cneigh>
 			<hsurf>0.5</hsurf>
-			<hbott>-1.0</hbott> <!-- default: -0.25 -->
+			<hbott>-0.25</hbott>
 			<hmidd>-4.0</hmidd>
 			<hwallmult>0.8</hwallmult>
 			<rneigh>0.25</rneigh>
@@ -130,8 +130,8 @@
 			<d_dens>0.3</d_dens>
 			<d_vel>0.1</d_vel>
 			<nfiltvert>2</nfiltvert>
-			<wfiltvert>0.1</wfiltvert> <!-- default 0.3 -->
-			<wfilthorz>0.2</wfilthorz> <!-- default 0.4 -->
+			<wfiltvert>0.3</wfiltvert>
+			<wfilthorz>0.4</wfilthorz>
 			<hmin>0.1</hmin>
 			<tgrid>14400.0</tgrid>
 			<split>1</split>
