@@ -2,94 +2,58 @@
 #
 # Explanations at the end of the file.
 
-store/out_hourly_2d:
-  time_method: 1  # treatment of time dimension: instantaneous
-  time_unit: hour
-  time_step: 1
+store/out_geometry_2d:
   variables:
   - source: domain/*
     output_level: 32
   - source: metrics/*
     output_level: 32
   - source: glIceD
+
+store/out_hourly_2d:
+  time_unit: hour
+  time_step: 1
+  variables:
+  - source: bathymetry
+  - source: glacial_ice/*
   - source: z
     name: eta
   - source: D
-  - source: DU
-  - source: DV
   - source: U
   - source: V
-  - source: velx
-    name: u2d
-  - source: vely
-    name: v2d
-  - source: vm
+  - source: u2d
+  - source: v2d
 
-store/out_snapshot:
-  time_method: 1  # treatment of time dimension: instantaneous
+store/out_daily:
   time_unit: day
   time_step: 1
   variables:
-  - source: domain/*
-    output_level: 32
-  - source: metrics/*
-    output_level: 32
-  - source: turbulence/*
-    output_level: 32
-  - source: glacial_ice/*
-    output_level: 32
+  - source: bathymetry
+  - source: glIceD
   - source: z
     name: eta
-  - source: D
-  - source: DU
-  - source: DV
   - source: zc
   - source: hn
     name: h
-  - source: hun
-    name: hu
-  - source: hvn
-    name: hv
-  - source: rho
   - source: salt
   - source: temp
-  - source: SS
-  - source: NN
-  - source: U
-  - source: V
-  - source: uu
-  - source: vv
-  - source: velx
-    name: u2d
-  - source: vely
-    name: v2d
-  - source: velx3d
-    name: u
-  - source: vely3d
-    name: v
+  - source: u3d
+  - source: v3d
   - source: w
-  - source: Tfluxu
-  - source: Tfluxv
-  - source: Tfluxw
 
 store/out_mean:
-  time_method: 2  # treatment of time dimension: mean
+  time_method: 2  # average in time
   time_unit: day
   time_step: 1
+  time_start: 2000-12-31 00:00:00
   variables:
-  - source: domain/*
-    output_level: 32
-  - source: metrics/*
-    output_level: 32
-  - source: turbulence/*
-    output_level: 32
+  - source: bathymetry
   - source: glacial_ice/*
-    output_level: 32
   - source: z
     name: eta
   - source: D
-  - source: DU
-  - source: DV
+  - source: U
+  - source: V
   - source: zc
   - source: hn
     name: h
@@ -102,41 +66,37 @@ store/out_mean:
   - source: temp
   - source: SS
   - source: NN
-  - source: U
-  - source: V
-  - source: uu
-  - source: vv
+  - source: u2d
+  - source: v2d
+  - source: u3d
+  - source: v3d
   - source: velx
-    name: u2d
   - source: vely
-    name: v2d
   - source: velx3d
-    name: u
   - source: vely3d
-    name: v
   - source: w
   - source: Tfluxu
   - source: Tfluxv
-  - source: Tfluxw
+  - source: turbulence/*
+    output_level: 32
 
 # Explanation and template of the file format:
 #
+#allow_missing_fields (optional; do not stop if a requested field is not registered) [ true | false (DEFAULT) ]
 #<(path and) name of the output file without extension>:
 # use (optional; set to false to disable writing output to this file) [ true (DEFAULT) | false ]
+# time_method (optional) [ 0 (time independent) | 1 (instantaneous, DEFAULT) | 2 (mean) | 3 (integrated) ]
 # time_unit (MANDATORY) [ dt (model timestep) | second | hour | day | month | year ]
 # time_step (MANDATORY; number of time units between output)
-# time_method (optional) [ 0 (time independent) | 1 (instantanuous) | 2 (mean) | 3 (integrated) ]
-# time_reference (optional) [string; DEFAULT: first output time]
 # time_start (optional) [string; DEFAULT: start of simulation]
-# time_stop (optional) [strong; DEFAULT: end of simulation]
+# time_stop (optional) [string; DEFAULT: end of simulation]
 # [i|j|k]_[start|stop|stride] (optional) [global integers]
-# format (optional) [ netcdf (DEFAULT) | text ]
-# sync_interval (optional) [DEFAULT: 1]
 # variables: (MANDATORY; check output of "getm -l" for list of all registered variables)
-# - source: [ * | <varname>,<category>/[ * | <varname>, ... ]
-# - name (optional) [???]
-# - prefix (optional) [???]
-# - postfix (optional) [???]
-# - output_level (optional) [???]
+# - source: [ * | <varname> | <category>/[ * | <varname> ] ]
+#   name (optional, for fields)
+#   prefix (optional, for categories)
+#   postfix (optional, for categories)
+#   output_level (optional, 32 (debug) to include all variables)
+#   time_method (optional)
 #
 # Further information on https://getm.eu/flexout/articles/flexout.html
