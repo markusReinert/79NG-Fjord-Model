@@ -9,7 +9,7 @@
 		<time>
 			<timestep>2.0</timestep>
 			<start>2000-01-01 00:00:00</start>
-			<stop>2001-01-01 00:00:00</stop>
+			<stop>2002-01-01 00:00:00</stop>
 		</time>
 		<domain>
 			<vert_cord>6</vert_cord>
@@ -59,8 +59,9 @@
 			<vel2d_adv_split>2</vel2d_adv_split>
 			<vel2d_adv_hor>4</vel2d_adv_hor>
 			<Am_method>2</Am_method>
-			<sealevel_check>10</sealevel_check>
-			<depth_check>10</depth_check>
+			<An_method>2</An_method>
+			<An_const>50</An_const>
+			<An_file>topography_500m.nc</An_file>
 			<bdy2d>True</bdy2d>
 			<bdyfile_2d>bdy_2d.nc</bdyfile_2d>
 			<bdy2d_sponge_size>0</bdy2d_sponge_size>
