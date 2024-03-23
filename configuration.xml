@@ -83,16 +83,16 @@
 			<ip_method>6</ip_method>
 		</m3d>
 		<temp>
-			<temp_method>2</temp_method>
-			<temp_file>temp_profile.txt</temp_file>
+			<temp_method>3</temp_method>
+			<temp_file>init_3d.nc</temp_file>
 			<temp_adv_split>2</temp_adv_split>
 			<temp_adv_hor>4</temp_adv_hor>
 			<temp_adv_ver>4</temp_adv_ver>
 			<avmolt>1.4e-07</avmolt>
 		</temp>
 		<salt>
-			<salt_method>2</salt_method>
-			<salt_file>salt_profile.txt</salt_file>
+			<salt_method>3</salt_method>
+			<salt_file>init_3d.nc</salt_file>
 			<salt_adv_split>2</salt_adv_split>
 			<salt_adv_hor>4</salt_adv_hor>
 			<salt_adv_ver>4</salt_adv_ver>
@@ -138,12 +138,4 @@
 			<split>1</split>
 		</adapt_coord>
 	</adaptcoord6>
-	<fjord>
-		<stratification>
-			<level z="0"    S="29" T="-1.5" />
-			<level z="-100" S="34" T="-1.0" />
-			<level z="-300" S="35" T="1.5" />
-			<level z="-900" S="35" T="1.5" />
-		</stratification>
-	</fjord>
 </scenario>
