@@ -3,6 +3,8 @@
 # Explanations at the end of the file.
 
 store/out_geometry_2d:
+  # 2D geometry is time-independent, so only save it at the first timestep
+  time_stop: 2000-01-01 00:00:00
   variables:
   - source: domain/*
     output_level: 32
@@ -44,8 +46,8 @@ store/out_daily:
 store/out_mean:
   time_method: 2  # average in time
   time_unit: day
-  time_step: 1
-  time_start: 2000-12-31 00:00:00
+  time_step: 365
+  time_start: 2005-01-01 00:00:00
   variables:
   - source: bathymetry
   - source: glacial_ice/*
@@ -57,10 +59,6 @@ store/out_mean:
   - source: zc
   - source: hn
     name: h
-  - source: hun
-    name: hu
-  - source: hvn
-    name: hv
   - source: rho
   - source: salt
   - source: temp
@@ -68,8 +66,6 @@ store/out_mean:
   - source: NN
   - source: u2d
   - source: v2d
-  - source: u3d
-  - source: v3d
   - source: velx
   - source: vely
   - source: velx3d
@@ -80,12 +76,36 @@ store/out_mean:
   - source: turbulence/*
     output_level: 32
 
+store/out_sbin:
+  time_unit: day
+  time_step: 365
+  time_start: 2005-01-01 00:00:00
+  variables:
+  - source: bathymetry
+  - source: glIceD
+  - source: uu_s_mean
+  - source: vv_s_mean
+  - source: hu_s_mean
+  - source: hv_s_mean
+
+store/out_zbin:
+  time_unit: day
+  time_step: 365
+  time_start: 2005-01-01 00:00:00
+  variables:
+  - source: bathymetry
+  - source: glIceD
+  - source: uu_z_mean
+  - source: vv_z_mean
+  - source: hu_z_mean
+  - source: hv_z_mean
+
 # Explanation and template of the file format:
 #
 #allow_missing_fields (optional; do not stop if a requested field is not registered) [ true | false (DEFAULT) ]
 #<(path and) name of the output file without extension>:
 # use (optional; set to false to disable writing output to this file) [ true (DEFAULT) | false ]
-# time_method (optional) [ 0 (time independent) | 1 (instantaneous, DEFAULT) | 2 (mean) | 3 (integrated) ]
+# time_method (optional) [ 1 (instantaneous, DEFAULT) | 2 (mean) | 3 (integrated) ]
 # time_unit (MANDATORY) [ dt (model timestep) | second | hour | day | month | year ]
 # time_step (MANDATORY; number of time units between output)
 # time_start (optional) [string; DEFAULT: start of simulation]

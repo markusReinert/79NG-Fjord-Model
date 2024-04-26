@@ -9,7 +9,7 @@
 		<time>
 			<timestep>2.0</timestep>
 			<start>2000-01-01 00:00:00</start>
-			<stop>2002-01-01 00:00:00</stop>
+			<stop>2010-01-01 00:00:00</stop>
 		</time>
 		<domain>
 			<vert_cord>6</vert_cord>
@@ -52,7 +52,7 @@
 			<river_info>grounding_line_500m.txt</river_info>
 			<river_data>subglacial_runoff.nc</river_data>
 			<use_river_salt>False</use_river_salt>
-			<use_river_temp>False</use_river_temp> <!-- TBC -->
+			<use_river_temp>False</use_river_temp>
 			<river_outflow_properties_follow_source_cell>False</river_outflow_properties_follow_source_cell>
 		</rivers>
 		<m2d>
@@ -97,6 +97,9 @@
 			<salt_adv_hor>4</salt_adv_hor>
 			<salt_adv_ver>4</salt_adv_ver>
 			<avmols>1.1e-09</avmols>
+			<saltbins>80</saltbins>
+			<saltbinmin>27</saltbinmin>
+			<saltbinmax>35</saltbinmax>
 		</salt>
 		<io_spec>
 			<out_dir>store</out_dir>
@@ -110,6 +113,9 @@
 				<e/>
 				<e>43200</e>
 			</hotout>
+			<zbins>90</zbins>
+			<zbinmin>-890</zbinmin>
+			<zbinmax>10</zbinmax>
 		</io_spec>
 	</getm>
 	<adaptcoord6>
