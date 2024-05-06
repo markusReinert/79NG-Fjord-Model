@@ -76,13 +76,24 @@ store/out_mean:
   - source: turbulence/*
     output_level: 32
 
+store/out_TEF:
+  time_method: 2  # average in time
+  time_unit: hour
+  time_step: 1
+  time_start: 2005-01-01 00:00:00
+  variables:
+  - source: salt
+  - source: temp
+  - source: velx3d
+  - source: vely3d
+  - source: hn
+    name: h
+
 store/out_sbin:
   time_unit: day
   time_step: 365
   time_start: 2005-01-01 00:00:00
   variables:
-  - source: bathymetry
-  - source: glIceD
   - source: uu_s_mean
   - source: vv_s_mean
   - source: hu_s_mean
@@ -93,8 +104,6 @@ store/out_zbin:
   time_step: 365
   time_start: 2005-01-01 00:00:00
   variables:
-  - source: bathymetry
-  - source: glIceD
   - source: uu_z_mean
   - source: vv_z_mean
   - source: hu_z_mean
