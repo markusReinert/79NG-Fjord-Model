@@ -12,11 +12,11 @@ Feel free to reach out if you have any questions or would like to collaborate.
 ### 1. Compile GETM
 
 Follow the [instructions on the official GETM website](https://getm.eu/software.html) to download the GETM code and compile it into an executable for your machine.
-Put the GETM executable in the path [`model/`](model)`bin/getm`.
+Put the GETM executable in the path `model/bin/getm`.
 
 ### 2. Create the setup
 
-**Note:** This step can be skipped by downloading the files included in a [Release](releases).
+**Note:** This step can be skipped by downloading the files included in a [Release](https://github.com/markusReinert/79NG-Fjord-Model/releases).
 
 The files to run the model exist or will be created in the directory [model](model).
 At the end of this step, the model folder should contain:
@@ -33,7 +33,7 @@ At the end of this step, the model folder should contain:
 - `output.yaml` included in this repository
 - `parallel.inp` included in this repository
 - `par_setup.dat` created by subdiv
-- `store/` empty directory
+- `store` empty directory
 - `subglacial_runoff.nc` downloaded from Reinert (2023)
 - `topography_500m.nc` created by the notebook for topography
 
@@ -48,13 +48,13 @@ To create the input files, run the notebooks of this repository in the following
 The notebooks require external data files described in the notebook headers.
 Make sure to download the necessary datasets and put them in the correct locations.
 
-### Runoff data
+#### Runoff data
 
 Download the file [`subglacial_runoff.nc`](https://github.com/markusReinert/GETM-setup_2DV-fjord/blob/main/subglacial_runoff.nc) from the setup by Reinert (2023) and put it in the model folder.
 
 #### Namelists
 
-Use [editscenario](https://github.com/BoldingBruggeman/editscenario/), which can be installed from the Python Package Index with pip, to create the namelist files that configure GETM.
+Use [editscenario](https://github.com/BoldingBruggeman/editscenario/) (can be installed from the Python Package Index with pip) to create the namelist files that configure GETM.
 Assuming that GETM was downloaded to `$HOME/tools/getm/code`, run the following command to create the namelists:
 ```
 editscenario --schemadir $HOME/tools/getm/code/schemas -e nml model configuration.xml
@@ -62,7 +62,7 @@ editscenario --schemadir $HOME/tools/getm/code/schemas -e nml model configuratio
 If you want to modify the model configuration, this must be done before running editscenario.
 You can directly modify the [configuration file](configuration.xml) or make temporary modifications in the command line, e.g., `export stop="2006-01-01 00:00:00"` to limit the simulation to six model years.
 
-#### Parallel setup
+#### Subdomain division
 
 This GETM setup is usually run on a large number of CPU cores, say 150.
 Use `subdiv` from the [GETM-utils](https://sourceforge.net/p/getm-utils/) to create the file `par_setup.dat` describing a subdomain division suitable for the number of CPU cores available on your machine.
