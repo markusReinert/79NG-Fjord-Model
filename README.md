@@ -3,7 +3,7 @@
 This repository contains the code to create a semi-realistic, three-dimensional, high-resolution, numerical **ocean model of the 79° North Glacier (79NG) fjord** located in Northeast Greenland, using the General Estuarine Transport Model [**GETM**](https://getm.eu/).
 The model is based on the idealized setup by Reinert et al. (2023).
 
-Developed by Markus Reinert ([ORCID: 0000-0002-3761-8029](https://orcid.org/0000-0002-3761-8029)) at the Leibniz Institute for Baltic Sea Research Warnemünde (IOW).
+Developed by Markus Reinert ([ORCID: 0000-0002-3761-8029](https://orcid.org/0000-0002-3761-8029)) at the Leibniz Institute for Baltic Sea Research Warnemünde (IOW) in the research project [GROCE: Greenland Ice Sheet–Ocean Interaction](https://groce.de/).
 Feel free to reach out if you have any questions or would like to collaborate.
 
 
@@ -11,8 +11,14 @@ Feel free to reach out if you have any questions or would like to collaborate.
 
 ### 1. Compile GETM
 
-Follow the [instructions on the official GETM website](https://getm.eu/software.html) to download the GETM code and compile it into an executable for your machine.
-Put the GETM executable in the path `model/bin/getm`.
+Follow the [instructions on the official GETM website](https://getm.eu/software.html) to download the code of GETM and GOTM, and to compile GETM into an executable for your machine.
+This setup requires the `glacial_ice` branch of GETM, published by Klingbeil (2023) at [DOI: 10.5281/zenodo.7741925](https://doi.org/10.5281/zenodo.7741925).
+Compilation consists (roughly) of running the following two commands in an (empty) build folder, with `GETMDIR` and `GOTMDIR` defined as the paths to the downloaded GETM and GOTM codes:
+```bash
+cmake $GETMDIR/src -DCMAKE_INSTALL_PREFIX=`pwd` -DGETM_EMBED_VERSION=ON -DGETM_USE_PARALLEL=ON -DGOTM_BASE=$GOTMDIR
+make install
+```
+Put the GETM executable in the path `model/bin/getm` in (a clone or release of) this repository.
 
 ### 2. Create the setup
 
@@ -59,8 +65,7 @@ Assuming that GETM was downloaded to `$HOME/tools/getm/code`, run the following 
 ```
 editscenario --schemadir $HOME/tools/getm/code/schemas -e nml model configuration.xml
 ```
-If you want to modify the model configuration, this must be done before running editscenario.
-You can directly modify the [configuration file](configuration.xml) or make temporary modifications in the command line, e.g., `export stop="2006-01-01 00:00:00"` to limit the simulation to six model years.
+To change the model configuration, modify the [configuration file](configuration.xml) directly or make temporary modifications in the command line, e.g., `export stop="2006-01-01 00:00:00"` to limit the simulation to six model years, before running editscenario.
 
 #### Subdomain division
 
