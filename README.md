@@ -1,7 +1,7 @@
 # 79NG Fjord Model
 
-This repository contains the code to create a semi-realistic, three-dimensional, high-resolution, numerical **ocean model of the 79° North Glacier (79NG) fjord** located in Northeast Greenland, using the General Estuarine Transport Model [**GETM**](https://getm.eu/).
-The model is based on the idealized setup by Reinert et al. (2023).
+This repository contains the code to create a realistic, three-dimensional, high-resolution, numerical **ocean model of the 79° North Glacier (79NG) fjord** located in Northeast Greenland, using the General Estuarine Transport Model [**GETM**](https://getm.eu/).
+The model is based on the idealized 2D-vertical setup by Reinert et al. (2023) of the same fjord, which has been extended to 3D, equipped with realistic topography and forced by temporally-averaged ocean conditions from a global model.
 
 Developed by Markus Reinert ([ORCID: 0000-0002-3761-8029](https://orcid.org/0000-0002-3761-8029)) at the Leibniz Institute for Baltic Sea Research Warnemünde (IOW) in the research project [GROCE: Greenland Ice Sheet–Ocean Interaction](https://groce.de/).
 Feel free to reach out if you have any questions or would like to collaborate.
