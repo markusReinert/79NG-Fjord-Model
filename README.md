@@ -1,6 +1,7 @@
 # 79NG Fjord Model
 
 This repository contains the code to create a realistic, three-dimensional, high-resolution, numerical **ocean model of the 79° North Glacier (79NG) fjord** located in Northeast Greenland, using the General Estuarine Transport Model [**GETM**](https://getm.eu/).
+The model is described and analyzed by Reinert et al. (2026); their results and figures can be reproduced with this repository.
 The model is based on the idealized 2D-vertical setup by Reinert et al. (2023) of the same fjord, which has been extended to 3D, equipped with realistic topography and forced by temporally-averaged ocean conditions from a global model.
 
 Developed by Markus Reinert ([ORCID: 0000-0002-3761-8029](https://orcid.org/0000-0002-3761-8029)) at the Leibniz Institute for Baltic Sea Research Warnemünde (IOW) in the research project [GROCE: Greenland Ice Sheet–Ocean Interaction](https://groce.de/).
@@ -12,7 +13,7 @@ Feel free to reach out if you have any questions or would like to collaborate.
 ### 1. Compile GETM
 
 Follow the [instructions on the official GETM website](https://getm.eu/software.html) to download the code of GETM and GOTM, and to compile GETM into an executable for your machine.
-This setup requires the `glacial_ice` branch of GETM, published by Klingbeil (2023) at [DOI: 10.5281/zenodo.7741925](https://doi.org/10.5281/zenodo.7741925).
+This setup requires the `glacial_ice` branch of GETM, published by Klingbeil (2024) at [DOI: 10.5281/zenodo.17201289](https://doi.org/10.5281/zenodo.17201289)
 Compilation consists (roughly) of running the following two commands in an (empty) build folder, with `GETMDIR` and `GOTMDIR` defined as the paths to the downloaded GETM and GOTM codes:
 ```bash
 cmake $GETMDIR/src -DCMAKE_INSTALL_PREFIX=`pwd` -DGETM_EMBED_VERSION=ON -DGETM_USE_PARALLEL=ON -DGOTM_BASE=$GOTMDIR
@@ -24,8 +25,8 @@ Put the GETM executable in the path `model/bin/getm` in (a clone or release of) 
 
 **Note:** This step can be skipped by downloading the files included in a [Release](https://github.com/markusReinert/79NG-Fjord-Model/releases).
 
-The files to run the model exist or will be created in the directory [model](model).
-At the end of this step, the model folder should contain:
+The files to run the model exist or will be created in the [model](model) directory.
+At the end of this step, the directory should contain:
 - `adaptcoord6.inp` created by editscenario
 - `bdy_2d.nc` created by the notebook for boundary conditions
 - `bdy_3d.nc` created by the notebook for boundary conditions
@@ -90,6 +91,31 @@ Use `ncmerge` from the [GETM-utils](https://sourceforge.net/p/getm-utils/) to co
 
 
 ## References
-Reinert, M., Lorenz, M., Klingbeil, K., Büchmann, B., & Burchard, H. (2023). _High-Resolution Simulations of the Plume Dynamics in an Idealized 79°N Glacier Cavity Using Adaptive Vertical Coordinates._ Journal of Advances in Modeling Earth Systems. [DOI: 10.1029/2023MS003721](https://doi.org/10.1029/2023MS003721)
 
-Reinert, M. (2023). _Setup files of the 2DV-model for the 79NG fjord (v1.0.1)._ Zenodo. [DOI: 10.5281/zenodo.7755753](https://doi.org/10.5281/zenodo.7755753)
+### Main publication
+
+The following publication explains the model setup and analyzes the results.
+This is the primary reference to be cited when using the code or model of this repository:
+
+- Reinert, M., Wekerle, C., Klingbeil, K., Lorenz, M., & Burchard, H. (2026). _The multilayer ocean circulation melting the 79N Glacier ice tongue._ EGUsphere, 1–31. [DOI: 10.5194/egusphere-2025-6459](https://doi.org/10.5194/egusphere-2025-6459) (preprint)
+
+### Citation of this repository
+
+The code and the model setup of this repository are archived on Zenodo to be citable.
+To get the DOI of a specific release/version, click on the link:
+
+ - Reinert, M. (2026). _79NG Fjord Model in GETM._ Zenodo. [DOI: 10.5281/zenodo.18037995](https://doi.org/10.5281/zenodo.18037995) (code)
+
+### Data files
+
+The output files produced by the model of this repository and used in the analysis notebooks are archived at:
+
+ - Reinert, M. (2026). _Output Files of the 3D Model of the 79NG Fjord (1.1)._ Zenodo. [DOI: 10.5281/zenodo.21107642](https://doi.org/10.5281/zenodo.21107642) (data set)
+
+### Related publications
+
+The following paper and setup files are for an idealized model of the same glacier fjord:
+
+ - Reinert, M., Lorenz, M., Klingbeil, K., Büchmann, B., & Burchard, H. (2023). _High-Resolution Simulations of the Plume Dynamics in an Idealized 79°N Glacier Cavity Using Adaptive Vertical Coordinates._ Journal of Advances in Modeling Earth Systems. [DOI: 10.1029/2023MS003721](https://doi.org/10.1029/2023MS003721)
+
+ - Reinert, M. (2023). _Setup files of the 2DV-model for the 79NG fjord (v1.0.1)._ Zenodo. [DOI: 10.5281/zenodo.7755753](https://doi.org/10.5281/zenodo.7755753) (code)
