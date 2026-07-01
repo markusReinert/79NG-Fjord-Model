@@ -2,6 +2,7 @@
 data/*
 figures
 model
+output
 
 # External libraries
 freshwater
