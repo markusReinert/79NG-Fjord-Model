@@ -1,4 +1,4 @@
-# 79NG Fjord Model
+# 79NG Fjord Model in GETM
 
 This repository contains the code to create a realistic, three-dimensional, high-resolution, numerical **ocean model of the 79° North Glacier (79NG) fjord** located in Northeast Greenland, using the General Estuarine Transport Model [**GETM**](https://getm.eu/).
 The model is described and analyzed by Reinert et al. (2026); their results and figures can be reproduced with this repository.
@@ -13,7 +13,7 @@ Feel free to reach out if you have any questions or would like to collaborate.
 ### 1. Compile GETM
 
 Follow the [instructions on the official GETM website](https://getm.eu/software.html) to download the code of GETM and GOTM, and to compile GETM into an executable for your machine.
-This setup requires the `glacial_ice` branch of GETM, published by Klingbeil (2024) at [DOI: 10.5281/zenodo.17201289](https://doi.org/10.5281/zenodo.17201289)
+This setup requires the `glacial_ice` branch of GETM, published by Klingbeil (2024) at [DOI: 10.5281/zenodo.17201289](https://doi.org/10.5281/zenodo.17201289).
 Compilation consists (roughly) of running the following two commands in an (empty) build folder, with `GETMDIR` and `GOTMDIR` defined as the paths to the downloaded GETM and GOTM codes:
 ```bash
 cmake $GETMDIR/src -DCMAKE_INSTALL_PREFIX=`pwd` -DGETM_EMBED_VERSION=ON -DGETM_USE_PARALLEL=ON -DGOTM_BASE=$GOTMDIR

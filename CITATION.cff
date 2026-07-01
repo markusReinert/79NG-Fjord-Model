@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: 79NG Fjord Model in GETM
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file and the associated publication.
+type: software
+authors:
+  - given-names: Markus
+    family-names: Reinert
+    affiliation: >-
+      Leibniz Institute for Baltic Sea Research Warnemünde
+      (IOW)
+    orcid: 'https://orcid.org/0000-0002-3761-8029'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.18037995
+    description: archived version of this repository
+  - type: doi
+    value: 10.5194/egusphere-2025-6459
+    description: preprint associated with this repository
+repository-code: 'https://github.com/markusReinert/79NG-Fjord-Model'
+abstract: >-
+  Realistic, three-dimensional, high-resolution, numerical
+  ocean model of the 79° North Glacier (79NG) fjord located
+  in Northeast Greenland, using the General Estuarine
+  Transport Model (GETM).
+license: MIT
